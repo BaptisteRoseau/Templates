@@ -1,0 +1,17 @@
+{
+    "security.workspace.trust.untrustedFiles": "open",
+    "python.envFile": "${workspaceFolder}/.venv",
+    "explorer.confirmDragAndDrop": false,
+    "python.linting.pylintArgs": [
+        "--recursive=y src tst",
+        "--disable=missing-function-docstring",
+        "--disable=missing-module-docstring",
+        "--disable=missing-class-docstring"
+    ],
+    "python.autoComplete.extraPaths": [
+        "${workspaceFolder}/src"
+    ],
+    "workbench.colorTheme": "Visual Studio Dark",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+}
