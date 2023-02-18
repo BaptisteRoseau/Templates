@@ -1,2 +1,2 @@
 # skelettons
-My personnal skelettons use to setup new environments, VSCodium configuration files and other prefabs.
+My personnal skelettons used to setup new environments, VSCodium configuration files and home directory configs.
