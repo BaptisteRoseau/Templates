@@ -11,7 +11,6 @@
     "python.autoComplete.extraPaths": [
         "${workspaceFolder}/src"
     ],
-    "workbench.colorTheme": "Visual Studio Dark",
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
 }
