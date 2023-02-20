@@ -13,4 +13,54 @@
     ],
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
+        "editor.rulers": [80, 120],
+    "workbench.colorCustomizations": {
+        "editorRuler.foreground": "#35199b93"
+    },
+    "files.autoSave": "afterDelay",
+    "explorer.confirmDelete": false,
+    "window.menuBarVisibility": "toggle",
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter-notebook",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "cSpell.enableFiletypes": [
+        "plaintext"
+    ],
+    "C_Cpp.updateChannel": "Insiders",
+    "cmake.configureOnOpen": false,
+    "python.autoComplete.extraPaths": [
+        "${workspaceFolder}/tst",
+        "${workspaceFolder}/src",
+        "${workspaceFolder}"
+    ],
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/tst",
+        "${workspaceFolder}/src",
+        "${workspaceFolder}"
+    ],
+    "terminal.integrated.env.linux": {
+        "PYTHONPATH": "${workspaceFolder}/tst:${workspaceFolder}/src:${env:PYTHONPATH}"
+    },
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintUseMinimalCheckers": false,
+    "python.linting.enabled": true,
+    "python.linting.pylintArgs": [
+        "--disable=missing-class-docstring",
+        "--disable=missing-function-docstring",
+        "--disable=c-extension-no-member",
+        "--disable=missing-module-docstring",
+        "--disable=broad-except",
+        "--disable=fixme",
+        "--disable=too-many-boolean-expressions",
+        "--good-names-rgxs=^[_a-z][_a-z0-9]?[_a-z0-9]?$",
+        "--max-line-length=120"
+    ],
+    "python.venvFolders": [
+        "${workspaceFolder}/.venv",
+        "${workspaceFolder}/.virtualenv",
+        "${workspaceFolder}/.env"
+    ]
 }
