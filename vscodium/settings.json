@@ -1,25 +1,13 @@
 {
-    "security.workspace.trust.untrustedFiles": "open",
-    "python.envFile": "${workspaceFolder}/.venv",
-    "explorer.confirmDragAndDrop": false,
-    "python.linting.pylintArgs": [
-        "--recursive=y src tst",
-        "--disable=missing-function-docstring",
-        "--disable=missing-module-docstring",
-        "--disable=missing-class-docstring"
-    ],
-    "python.autoComplete.extraPaths": [
-        "${workspaceFolder}/src"
-    ],
-    "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true,
-        "editor.rulers": [80, 120],
+    "editor.rulers": [80, 120],
     "workbench.colorCustomizations": {
         "editorRuler.foreground": "#35199b93"
     },
-    "files.autoSave": "afterDelay",
+    "security.workspace.trust.untrustedFiles": "open",
     "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
     "window.menuBarVisibility": "toggle",
+    "files.autoSave": "afterDelay",
     "workbench.editorAssociations": [
         {
             "viewType": "jupyter-notebook",
@@ -30,6 +18,9 @@
         "plaintext"
     ],
     "C_Cpp.updateChannel": "Insiders",
+    "terminal.integrated.env.linux": {
+        "PYTHONPATH": "${workspaceFolder}/tst:${workspaceFolder}/src:${env:PYTHONPATH}"
+    },
     "cmake.configureOnOpen": false,
     "python.autoComplete.extraPaths": [
         "${workspaceFolder}/tst",
@@ -41,13 +32,11 @@
         "${workspaceFolder}/src",
         "${workspaceFolder}"
     ],
-    "terminal.integrated.env.linux": {
-        "PYTHONPATH": "${workspaceFolder}/tst:${workspaceFolder}/src:${env:PYTHONPATH}"
-    },
     "python.linting.pylintEnabled": true,
     "python.linting.pylintUseMinimalCheckers": false,
     "python.linting.enabled": true,
     "python.linting.pylintArgs": [
+        "--recursive=y src tst",
         "--disable=missing-class-docstring",
         "--disable=missing-function-docstring",
         "--disable=c-extension-no-member",
@@ -58,6 +47,7 @@
         "--good-names-rgxs=^[_a-z][_a-z0-9]?[_a-z0-9]?$",
         "--max-line-length=120"
     ],
+    "python.envFile": "${workspaceFolder}/.venv",
     "python.venvFolders": [
         "${workspaceFolder}/.venv",
         "${workspaceFolder}/.virtualenv",
