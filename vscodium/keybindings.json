@@ -4,8 +4,9 @@
         "key": "ctrl+up",
         "command": "cursorMove",
         "args": {
-            "to": "prevBlankLine",
-            // "select": true
+            "to": "up",
+            "by": "line",
+            "value": 10
         },
         "when": "editorTextFocus"
     },
@@ -13,8 +14,9 @@
         "key": "ctrl+down",
         "command": "cursorMove",
         "args": {
-            "to": "nextBlankLine",
-            // "select": true
+            "to": "down",
+            "by": "line",
+            "value": 10
         },
         "when": "editorTextFocus"
     }
