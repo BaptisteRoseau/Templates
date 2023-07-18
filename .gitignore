@@ -1,3 +1,6 @@
+#IDE
+.vscode/
+
 # Rust
 **/target/
 Cargo.lock
