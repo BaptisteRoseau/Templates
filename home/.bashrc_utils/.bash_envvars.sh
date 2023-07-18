@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Modules
 export MODULES_ROOT=/opt/Modules
 export PATH="$PATH:$MODULES_ROOT/bin:$MODULES_ROOT/libexec"
