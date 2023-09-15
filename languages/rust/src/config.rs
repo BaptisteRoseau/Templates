@@ -32,11 +32,13 @@ pub(crate) struct Config {
     pub port: u16,
 }
 
+
 impl Config {
     pub fn parse_with_file() -> Result<Self, ConfigParsingError> {
         let mut output = Config::parse();
         output.file = output.config_file()?;
-        Ok(self.validate(output)?)
+        output.validate()?;
+        Ok(output)
     }
 
     fn config_file(&self) -> Result<ConfigFile, ConfigParsingError> {
@@ -47,7 +49,7 @@ impl Config {
         }
     }
 
-    fn validate(&self, config_file: &ConfigFile) -> Result<&Self, ConfigParsingError> {
+    fn validate(&self) -> Result<&Self, ConfigParsingError> {
         // Verify if the configuration parameters dependencies are coherent
         Ok(self)
     }
