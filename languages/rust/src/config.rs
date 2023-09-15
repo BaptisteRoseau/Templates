@@ -36,7 +36,7 @@ impl Config {
     pub fn parse_with_file() -> Result<Self, ConfigParsingError> {
         let mut output = Config::parse();
         output.file = output.config_file()?;
-        Ok(output)
+        Ok(self.validate(output)?)
     }
 
     fn config_file(&self) -> Result<ConfigFile, ConfigParsingError> {
@@ -45,6 +45,11 @@ impl Config {
         } else {
             Ok(ConfigFile::default())
         }
+    }
+
+    fn validate(&self, config_file: &ConfigFile) -> Result<&Self, ConfigParsingError> {
+        // Verify if the configuration parameters dependencies are coherent
+        Ok(self)
     }
 }
 
