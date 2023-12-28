@@ -61,3 +61,6 @@ vim.o.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
+
+-- Enable Blamer By default
+vim.g.blamer_enabled = true

@@ -9,3 +9,5 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     pattern = '*',
 })
 
+-- Blamer
+vim.cmd.highlight({ "Blamer", "guifg=#696969" })
