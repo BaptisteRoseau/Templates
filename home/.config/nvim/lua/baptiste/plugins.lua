@@ -62,7 +62,7 @@ require('lazy').setup({
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-path',
 
-            -- Adds a number of user-friendly snippets
+            -- Adds a number of user-friendly snippetz
             'rafamadriz/friendly-snippets',
         },
     },
@@ -223,4 +223,12 @@ require('lazy').setup({
         end
 
     },
+
+    -- Markdown Preview
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        ft = { "markdown" },
+        build = function() vim.fn["mkdp#util#install"]() end,
+    }
 }, {})

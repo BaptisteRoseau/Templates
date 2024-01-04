@@ -148,7 +148,7 @@ mason_lspconfig.setup_handlers {
 -- Install additional DAG, Formatters and Linters
 local mason_to_install = {
     'ansible-lint',
-    'autopep8',
+    'black',
     'bash-language-server',
     'clang-format',
     'clangd',
