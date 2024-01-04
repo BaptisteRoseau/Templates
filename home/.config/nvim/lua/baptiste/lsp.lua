@@ -66,19 +66,37 @@ require('which-key').register({
 require('mason').setup()
 require('mason-lspconfig').setup()
 
--- Enable the following language servers
---  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
---
---  Add any additional override configuration in the following tables. They will be passed to
---  the `settings` field of the server config. You must look up that documentation yourself.
---
---  If you want to override the default filetypes that your language server will attach to you can
---  define the property 'filetypes' to the map in question.
 local servers = {
+    -- Python
     ruff_lsp = { filetypes = { 'py' } },
+
+    -- Rust
     rust_analyzer = { filetypes = { 'rs' } },
 
+    -- C
+    clangd = { filetypes = { 'c', 'h', 'cpp', 'hpp' } },
+
+    -- Bash
+    bashls = { filetypes = { 'sh' } },
+
+    -- YAML
+    yamlls = { filetypes = { 'yaml', 'yml' } },
+
+    -- JSON
+    jsonls = { filetypes = { 'json' } },
+
+    -- LaTeX
+    ltex = { filetypes = { 'tex', 'md' } },
+
+    -- HTML
+    html = { filetypes = { 'html' } },
+
+    -- Docker
+    dockerls = { filetypes = { 'Dockerfile' } },
+
+    -- Lua
     lua_ls = {
+        filetypes = { 'lua' },
         Lua = {
             workspace = { checkThirdParty = false },
             telemetry = { enable = false },
@@ -112,6 +130,7 @@ local mason_lspconfig = require 'mason-lspconfig'
 
 mason_lspconfig.setup {
     ensure_installed = vim.tbl_keys(servers),
+    automatic_installation = false,
 }
 
 mason_lspconfig.setup_handlers {
@@ -124,3 +143,43 @@ mason_lspconfig.setup_handlers {
         }
     end,
 }
+
+
+-- Install additional DAG, Formatters and Linters
+local mason_to_install = {
+    'ansible-lint',
+    'autopep8',
+    'bash-language-server',
+    'clang-format',
+    'clangd',
+    'cmake-language-server',
+    'css-lsp',
+    'dockerfile-language-server',
+    'html-lsp',
+    'isort',
+    'json-lsp',
+    'latexindent',
+    'ltex-ls',
+    'lua-language-server',
+    'nginx-language-server',
+    'ruff-lsp',
+    'rust-analyzer',
+    'semgrep',
+    'shellcheck',
+    'terraform-ls',
+    'yaml-language-server',
+    'yamlfmt',
+    'yamllint'
+}
+for _, module in ipairs(mason_to_install)
+do
+    vim.cmd.MasonInstall({ module })
+end
+
+-- Update Mason
+vim.cmd.MasonUpdate({})
+
+-- For Linters, see how to integrate: <https://github.com/mfussenegger/nvim-lint>
+-- For Formatters: see <https://github.com/mhartington/formatter.nvim>
+-- For Debugging, see <https://github.com/rcarriga/nvim-dap-ui> and <https://github.com/mfussenegger/nvim-dap>
+

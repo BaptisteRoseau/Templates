@@ -34,6 +34,10 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "90"
 
+
+-- Set cursor to block in normal mode and bar in insert mode
+-- vim.opt.guicursor =
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
