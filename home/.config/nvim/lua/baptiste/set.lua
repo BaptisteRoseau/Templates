@@ -2,8 +2,6 @@
 vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
 
 -- ThePrimeagen
-vim.opt.guicursor = ""
-
 vim.opt.nu = true
 vim.opt.relativenumber = false
 
@@ -36,7 +34,7 @@ vim.opt.colorcolumn = "90"
 
 
 -- Set cursor to block in normal mode and bar in insert mode
--- vim.opt.guicursor =
+vim.opt.guicursor = 'n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20'
 
 -- Set highlight on search
 vim.o.hlsearch = false
