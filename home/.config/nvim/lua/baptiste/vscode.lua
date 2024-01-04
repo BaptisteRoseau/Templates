@@ -1,4 +1,5 @@
 local c = require('vscode.colors').get_colors()
+local tabs_color = '#3D3D3D'
 require('vscode').setup({
     -- Alternatively set style in setup
     style = 'dark',
@@ -14,18 +15,17 @@ require('vscode').setup({
 
     -- Override colors (see ./lua/vscode/colors.lua)
     color_overrides = {
-        -- vscLineNumber = '#FFFFFF',
-        -- vscTabCurrent = '#A7A7A7',
-        -- vscTabOther = '#A7A7A7',
-        -- vscTabOutside = '#A7A7A7',
+        -- vscFront = '#3D3D3D'
     },
 
     -- Override highlight groups (see ./lua/vscode/theme.lua)
     group_overrides = {
         -- this supports the same val table as vim.api.nvim_set_hl
         -- use colors from this colorscheme by requiring vscode.colors!
-        Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
+        -- See https://github.com/Mofiqul/vscode.nvim/blob/main/lua/vscode/theme.lua
+        TabLine = { fg = '#3D3D3D', bg = c.vscTabOther },
+        TabLineFill = { fg = '#3D3D3D', bg = c.vscTabOutside },
+        TabLineSel = { fg =  '#3D3D3D', bg = c.vscTabCurrent },
     }
 })
 require('vscode').load()
-
