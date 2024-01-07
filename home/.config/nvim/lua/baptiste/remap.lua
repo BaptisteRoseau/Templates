@@ -12,10 +12,10 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnos
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
--- Multi Cursor
--- See https://github.com/mg979/vim-visual-multi/blob/master/doc/visual-multi.txt
--- vim.keymap.set('n', 'C-S-<Up>', vim.cmd)
--- vim.keymap.set('n', 'C-S-<Down>', )
--- TODO: ctrl+D & ctrl+shift+L & ctrl+alt+i
--- TODO: shift+arrow in insert mode
+-- Indent In Visual Mode
+vim.keymap.set('v', '<Tab>', '>gv', { desc = 'Indent Right' })
+vim.keymap.set('n', '<Tab>', '>>', { desc = 'Indent Right' })
+vim.keymap.set('v', '<S-Tab>', '<gv', { desc = 'Indent Left' })
+vim.keymap.set('n', '<S-Tab>', '<<', { desc = 'Indent Left' })
+
 
