@@ -1,5 +1,4 @@
 local c = require('vscode.colors').get_colors()
-local tabs_color = '#3D3D3D'
 require('vscode').setup({
     -- Alternatively set style in setup
     style = 'dark',
@@ -23,9 +22,7 @@ require('vscode').setup({
         -- this supports the same val table as vim.api.nvim_set_hl
         -- use colors from this colorscheme by requiring vscode.colors!
         -- See https://github.com/Mofiqul/vscode.nvim/blob/main/lua/vscode/theme.lua
-        TabLine = { fg = '#3D3D3D', bg = c.vscTabOther },
-        TabLineFill = { fg = '#3D3D3D', bg = c.vscTabOutside },
-        TabLineSel = { fg =  '#3D3D3D', bg = c.vscTabCurrent },
+        -- NvimTreeIndentMarker = { fg = '#3D3D3D', bg = '#3D3D3D' },
     }
 })
 require('vscode').load()
