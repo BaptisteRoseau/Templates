@@ -171,15 +171,14 @@ local mason_to_install = {
     'yamlfmt',
     'yamllint'
 }
-for _, module in ipairs(mason_to_install)
-do
-    vim.cmd.MasonInstall({ module })
-end
+--for _, module in ipairs(mason_to_install)
+--do
+--    vim.cmd.MasonInstall({ module })
+--end
 
 -- Update Mason
-vim.cmd.MasonUpdate({})
+-- vim.cmd.MasonUpdate({})
 
 -- For Linters, see how to integrate: <https://github.com/mfussenegger/nvim-lint>
 -- For Formatters: see <https://github.com/mhartington/formatter.nvim>
 -- For Debugging, see <https://github.com/rcarriga/nvim-dap-ui> and <https://github.com/mfussenegger/nvim-dap>
-
