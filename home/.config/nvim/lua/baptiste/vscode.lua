@@ -22,7 +22,25 @@ require('vscode').setup({
         -- this supports the same val table as vim.api.nvim_set_hl
         -- use colors from this colorscheme by requiring vscode.colors!
         -- See https://github.com/Mofiqul/vscode.nvim/blob/main/lua/vscode/theme.lua
-        -- NvimTreeIndentMarker = { fg = '#3D3D3D', bg = '#3D3D3D' },
+        -- IndentBlanklineContextChar        = { fg = "#FFFFFF", bg = 'NONE', nocombine = true },
+        -- IndentBlanklineContextStart       = { fg = "#FFFFFF", bg = 'NONE', nocombine = true, underline = true },
+        -- IndentBlanklineChar               = { fg = "#FFFFFF", bg = 'NONE', nocombine = true },
+        -- IndentBlanklineSpaceChar          = { fg = "#FFFFFF", bg = 'NONE', nocombine = true },
+        -- IndentBlanklineSpaceCharBlankline = { fg = "#FFFFFF", bg = 'NONE', nocombine = true },
+        -- NvimTreeIndentMarker              = { fg = "#FFFFFF", bg = 'NONE' }
     }
 })
 require('vscode').load()
+
+local highlight = {
+    "CursorColumn",
+    "Whitespace",
+
+}
+require('ibl').setup({
+    whitespace = {
+        highlight = highlight,
+        remove_blankline_trail = false
+    },
+    scope = { enabled = false },
+})
