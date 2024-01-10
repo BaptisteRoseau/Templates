@@ -31,7 +31,7 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "90"
-
+vim.opt.cursorline = true
 
 -- Set cursor to block in normal mode and bar in insert mode
 vim.opt.guicursor = 'n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20'
