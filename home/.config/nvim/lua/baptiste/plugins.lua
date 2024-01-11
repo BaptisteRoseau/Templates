@@ -151,26 +151,18 @@ require('lazy').setup({
     },
 
     {
-        -- Theme inspired by Atom
-        'navarasu/onedark.nvim',
-        priority = 1000,
-        config = function()
-            vim.cmd.colorscheme 'onedark'
-        end,
-    },
-
-    {
         -- Set lualine as statusline
         'nvim-lualine/lualine.nvim',
         -- See `:help lualine.txt`
         opts = {
             options = {
-                icons_enabled = false,
-                theme = 'onedark',
+                icons_enabled = true,
+                theme = 'horizon',
                 component_separators = '|',
                 section_separators = '',
             },
         },
+         dependencies = { 'nvim-tree/nvim-web-devicons' },
     },
 
     {
