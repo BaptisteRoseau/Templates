@@ -1,25 +1,33 @@
+local function map(mode, l, r, desc, opts)
+    opts = opts or {}
+    opts.desc = desc or ''
+    vim.keymap.set(mode, l, r, opts)
+end
+
 -- Keymaps for better default experience
--- See `:help vim.keymap.set()`
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+-- See `:help map()`
+map({ 'n', 'v' }, '<Space>', '<Nop>', '', { silent = true })
 
 -- Remap for dealing with word wrap
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+map('n', 'k', "v:count == 0 ? 'gk' : 'k'", '', { expr = true, silent = true })
+map('n', 'j', "v:count == 0 ? 'gj' : 'j'", '', { expr = true, silent = true })
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+map('n', '[d', vim.diagnostic.goto_prev, 'Go to previous diagnostic message')
+map('n', ']d', vim.diagnostic.goto_next, 'Go to next diagnostic message')
+map('n', '<leader>e', vim.diagnostic.open_float, 'Open floating diagnostic message')
+map('n', '<leader>q', vim.diagnostic.setloclist, 'Open diagnostics list')
+
+-- Navigate thgough files
+map('n', '<leader>od', ':Ex<cr>', '[O]pen [D]irectory')
 
 -- ================= VSCODE-Like Rempaps
 -- Indent In Visual Mode
-vim.keymap.set('v', '<Tab>', '>gv', { desc = 'Indent Right' })
-vim.keymap.set('n', '<Tab>', '>>', { desc = 'Indent Right' })
-vim.keymap.set('v', '<S-Tab>', '<gv', { desc = 'Indent Left' })
-vim.keymap.set('n', '<S-Tab>', '<<', { desc = 'Indent Left' })
+map('v', '<Tab>', '>gv', 'Indent Right')
+map('n', '<Tab>', '>>', 'Indent Right')
+map('v', '<S-Tab>', '<gv', 'Indent Left')
+map('n', '<S-Tab>', '<<', 'Indent Left')
 
--- Multi-Cursor 
--- vim.keymap.set('ni', '<C-S-Up>', vm.addacursor, { desc = 'Add Cursor Up' })
--- vim.keymap.set('ni', '<C-S-Down>', '', { desc = 'Add Cursor Down' })
-
+-- Multi-Cursor
+-- map('ni', '<C-S-Up>', vm.addacursor, 'Add Cursor Up')
+-- map('ni', '<C-S-Down>', vm.addacursor, 'Add Cursor Down')
