@@ -31,6 +31,13 @@ require('lazy').setup({
     -- Detect tabstop and shiftwidth automatically
     'tpope/vim-sleuth',
 
+    -- Netrw icons
+    {
+        'prichrd/netrw.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons', 'ryanoasis/vim-devicons' },
+
+    },
+
     -- NOTE: This is where your plugins related to LSP can be installed.
     --  The configuration is done below. Search for lspconfig to find it below.
     {
@@ -162,7 +169,7 @@ require('lazy').setup({
                 section_separators = '',
             },
         },
-         dependencies = { 'nvim-tree/nvim-web-devicons' },
+        dependencies = { 'nvim-tree/nvim-web-devicons', 'ryanoasis/vim-devicons' },
     },
 
     {

@@ -2,6 +2,7 @@
 require("baptiste.plugins")
 
 -- Plugins configurations
+require("baptiste.web_devicons")
 require("baptiste.telescope")
 require("baptiste.treesitter")
 require("baptiste.vscode")
