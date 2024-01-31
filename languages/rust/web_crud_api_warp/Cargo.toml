@@ -20,7 +20,7 @@ clippy = "0"
 env_logger = "0.11"
 log = "0.4"
 parking_lot = { version = "0.12", features = ["serde", "arc_lock", "deadlock_detection"] }
-serde = "1.0"
+serde = {version = "1.0", features = ["derive"] }
 serde_json = "1"
 serde_yaml = "0.9"
 thiserror = "1.0"
